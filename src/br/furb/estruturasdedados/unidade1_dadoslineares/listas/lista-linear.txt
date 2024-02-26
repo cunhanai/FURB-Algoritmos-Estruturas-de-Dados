@@ -1,0 +1,11 @@
+Lista linear é uma estrutra de dados que possui as seguintes características:
+
+• A estrutura pode armazenar vários dados
+• Os dados armazenados possuem o mesmo tipo de dado
+• Os dados estão organizados logicamente de forma sequencial, onde cada dado tem um único predecessor e um único sucessor
+– Exceção são o primeiro e último dado, que não possuem predecessor e sucessor, respectivamente.
+- Os dados não estão armazenados fisicamente, eles podem estar dispersos, porém possuem uma sequência lógica
+
+Existe duas categorias de implementação de listas lineares:
+– Implementação estática de lista
+– Implementação dinâmica de lista

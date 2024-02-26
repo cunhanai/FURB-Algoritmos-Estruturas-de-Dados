@@ -1,0 +1,45 @@
+A lista linear de implementação estática utiliza um vetor para armazenar os dados
+
+• Utiliza vetor
+– Permite acessar aleatoriamente qualquer elemento
+• Inserção ocorre após o último elemento
+• Retirada requer reposicionar os elementos
+• Quando esgotar a capacidade de armazenamento do vetor ocorre um “pseudo redimensionamento”
+
+- Para adquirir memória, o sistema precisa pedir memória para o sistema operacional;
+
+- Quando a linha abaixo é executada, o sistema pede para o SO a quantidade de memória equivalente a três ints contínuos:
+    int[] dados = new int[3];
+
+    - O SO retorna que a memória está disponível a partir daquele endereço
+
+• Ocupa espaço contíguo na memória
+• Permite acesso randômico aos elementos calculando a posição dos elementos
+    P(índice) = Endereço Inicial + (Índice * tamanho do elemento)
+
+    • Exemplo
+        P(2) = 100 + 2 × 4
+        P(2) = 108
+
+    - Executar dados[0] = 1 e dados[7544804] = 1 tem o mesmo esforço, pois a posição é calculada
+
+• Deve ser dimensionado com número máximo de elementos
+• Remoção de elementos ainda consome espaço
+
+• A criação da lista consiste em:
+– Criar um vetor com tamanho predefinido. Exemplo: 10 elementos
+    _ _ _ _ _ _ _ _ _ _
+
+– Definir que a quantidade de elementos que já foram armazenados na lista é “0” (zero). Usaremos o atributo tamanho.
+– Definir que a quantidade de elementos que já foram armazenados na lista é “0” (zero). Usaremos o atributo tamanho.
+
+• Os dados são adicionados ao final da estrutura:
+    lista.inserir(50);
+    lista.inserir(-15);
+    lista.inserir(12);
+    lista.inserir(28);
+    lista.inserir(91);
+
+    50 -15 12 28 91 _ _ _ _ _
+• O atributo tamanho é incrementado para indicar quantos dados já foram inseridos e qual a posição que deve ser utilizada para armazenar um novo dado
+

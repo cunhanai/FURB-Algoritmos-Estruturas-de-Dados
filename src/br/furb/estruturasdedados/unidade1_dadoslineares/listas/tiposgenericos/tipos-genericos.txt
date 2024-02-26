@@ -1,0 +1,13 @@
+ESTILO DE PROGRAMAÇÃO GENÉRICA
+
+- Permite que os algoritmos sejam escritos com tipos genéricos, mas devem ser especificados concretamente mais tarde
+
+- Utilizado quando há algoritmos que diferem apenas pelo tipo de dado que manipulam
+- Reduz código duplicado
+
+- Permite o compilador detectar erros
+- Não é necessário realizar type casting para tipos concretos
+
+Uma classe/interface genérica pode aceitar vários parâmetros de tipo
+– Portanto, chamamos de “classe genérica” as classes que são parametrizáveis
+– Igualmente, as interfaces genéricas são interfaces parametrizáveis
