@@ -1,0 +1,11 @@
+LISTA ENCADEADA
+
+- Sequência de elementos encadeados
+- Cada elemento é denomidade de "nó da lista", "nodo" ou "célula"
+
+Cada nó da lista contém
+- O dado que se quer armazenar
+- Uma referência para o próximo elemento da lista
+
+- A lista possui uma referência para o primeiro nó
+- A referência do últímo nó é null
