@@ -11,3 +11,29 @@ ESTILO DE PROGRAMAÇÃO GENÉRICA
 Uma classe/interface genérica pode aceitar vários parâmetros de tipo
 – Portanto, chamamos de “classe genérica” as classes que são parametrizáveis
 – Igualmente, as interfaces genéricas são interfaces parametrizáveis
+
+• Quando o tipo genérico for utilizado, espera-se que seja fornecido um tipo concreto.
+• Quando o tipo genérico é uma classe, a definição concreta do parâmetro de tipo ocorre na declaração da variável
+• Quando o tipo genérico for uma interface, ao utilizálo, espera-se que seja informado um parâmetro (classe concreta).
+
+TIPOS GENEROCOS
+
+• Não é possível informar um tipo primitivo como argumento de tipo
+    Par<int, Aluno> p1 = new Par<>();
+• Ao invés disso, deve-se utilizar as classes empacotadoras
+    Par<Integer, Aluno> p1 = new Par<>();
+
+    - Uma classe empacotadora é uma classe que representa um dado primitivo.
+
+AUTOBOXING E AUTOUNBOXING
+• Java permite que tipos primitivos e objetos de classes empacotadoras possam ser convertidos automaticamente.
+• O compilador irá automaticamente empacotar (autoboxing) um valor primitivo quando estiver num contexto que exigir um objeto.
+    Integer idade = 21;         Integer idade = new Integer(21);
+
+• O compilador irá automaticamente desempacotar (autounboxing) um objeto que estiver num contexto que exigir um valor primitivo
+    int filhos = new Integer(1);        int filhos = 1;
+
+• Em Java, para criar um vetor com objetos cujo tipo é uma classe genérica
+    variavel = (T[]) new Object[tamanho];
+    onde T é o parâmetro do tipo
+
