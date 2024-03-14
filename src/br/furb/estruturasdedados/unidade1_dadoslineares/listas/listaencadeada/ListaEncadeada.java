@@ -1,26 +1,30 @@
 package br.furb.estruturasdedados.unidade1_dadoslineares.listas.listaencadeada;
 
-public class ListaEncadeada {
+public class ListaEncadeada<Type> {
 
-    private NoLista primeiro;
+    private NoLista<Type> primeiro;
 
     public ListaEncadeada() {
         primeiro = null;
     }
 
-    public NoLista getPrimeiro() {
+    public NoLista<Type> getPrimeiro() {
         return primeiro;
     }
 
-    public void inserir(int info) {
-        NoLista novo = new NoLista();
+    public void inserir(Type info) {
+        NoLista<Type> novo = new NoLista<>();
         novo.setInfo(info);
         novo.setProximo(primeiro);
         primeiro = novo;
     }
 
+    public boolean estaVazia() {
+        return primeiro == null;
+    }
+
     public void exibir() {
-        NoLista atual = primeiro;
+        NoLista<Type> atual = primeiro;
 
         while (atual != null) {
             System.out.println(atual.getInfo());
@@ -28,15 +32,11 @@ public class ListaEncadeada {
         }
     }
 
-    public boolean estaVazia() {
-        return primeiro == null;
-    }
-
-    public NoLista buscar(int valor) {
-        NoLista atual = primeiro;
+    public NoLista<Type> buscar(Type valor) {
+        NoLista<Type> atual = primeiro;
 
         while (atual != null) {
-            if (atual.getInfo() == valor)
+            if (atual.getInfo().equals(valor))
                 return atual;
 
             atual = atual.getProximo();
@@ -45,11 +45,11 @@ public class ListaEncadeada {
         return null;
     }
 
-    public void retirar(int valor) {
-        NoLista anterior = null;
-        NoLista atual = primeiro;
+    public void retirar(Type valor) {
+        NoLista<Type> anterior = null;
+        NoLista<Type> atual = primeiro;
 
-        while (atual != null && atual.getInfo() != valor) {
+        while (atual != null && !atual.getInfo().equals(valor)) {
             anterior = atual;
             atual = atual.getProximo();
         }
@@ -60,5 +60,52 @@ public class ListaEncadeada {
             else
                 anterior.setProximo(atual.getProximo());
         }
+    }
+
+    public int obterComprimento() {
+        NoLista<Type> atual = primeiro;
+        int count = 0;
+
+        while (atual != null) {
+            count++;
+            atual = atual.getProximo();
+        }
+
+        return  count;
+    }
+
+    public NoLista<Type> obterNo(int idx) throws IndexOutOfBoundsException {
+        if (idx < 0)
+            throw new IndexOutOfBoundsException();
+
+        NoLista<Type> atual = primeiro;
+
+        while (atual != null && idx > 0) {
+            idx--;
+            atual = atual.getProximo();
+        }
+
+        if (atual == null)
+            throw new IndexOutOfBoundsException();
+
+        return atual;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+
+        NoLista<Type> atual = primeiro;
+        int count = 0;
+
+        while (atual != null) {
+            string.append(atual.getInfo());
+            atual = atual.getProximo();
+
+            if (atual != null)
+                string.append(",");
+        }
+
+        return string.toString();
     }
 }

@@ -8,42 +8,8 @@ import org.junit.Test;
 public class ListaEncadeadaTest {
 
     @Test
-    public void GetPrimeiroNullTest() {
-        ListaEncadeada lista = new ListaEncadeada();
-
-        Assert.assertNull(lista.getPrimeiro());
-    }
-
-    @Test
-    public void insertUmElementoTest(){
-        ListaEncadeada lista = new ListaEncadeada();
-
-        lista.inserir(5);
-
-        NoLista primeiro = lista.getPrimeiro();
-
-        Assert.assertNotNull(primeiro);
-        Assert.assertEquals(5, primeiro.getInfo());
-    }
-
-    @Test
-    public void insertVariosElementosTest(){
-        ListaEncadeada lista = new ListaEncadeada();
-
-        lista.inserir(5);
-        lista.inserir(10);
-        lista.inserir(15);
-        lista.inserir(20);
-
-        NoLista primeiro = lista.getPrimeiro();
-
-        Assert.assertNotNull(primeiro);
-        Assert.assertEquals(20, primeiro.getInfo());
-    }
-
-    @Test
     public void estaVaziaTest() {
-        ListaEncadeada lista = new ListaEncadeada();
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         boolean isVazia = lista.estaVazia();
 
@@ -51,60 +17,190 @@ public class ListaEncadeadaTest {
     }
 
     @Test
-    public void buscarTest(){
-        ListaEncadeada lista = new ListaEncadeada();
+    public void naoEstaVaziaTest() {
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        boolean isVazia = lista.estaVazia();
+
+        Assert.assertFalse(isVazia);
+    }
+
+    @Test
+    public void insertUmElementoTest(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+
+        NoLista<Integer> primeiro = lista.getPrimeiro();
+        int info = primeiro.getInfo();
+        NoLista<Integer> proximo = primeiro.getProximo();
+
+        Assert.assertNotNull(primeiro);
+        Assert.assertEquals(5, info);
+        Assert.assertNull(proximo);
+    }
+
+    @Test
+    public void insertVariosElementosTest(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+
+        int tamanho = lista.obterComprimento();
+        String valores = lista.toString();
+
+        Assert.assertEquals(3, tamanho);
+        Assert.assertEquals("15,10,5", valores);
+    }
+
+    @Test
+    public void buscarPrimeiroTest(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
         lista.inserir(20);
-        lista.inserir(25);
-        lista.inserir(30);
 
-        NoLista busca = lista.buscar(20);
+        NoLista<Integer> busca = lista.buscar(20);
+        int info = busca.getInfo();
 
-        Assert.assertEquals(20, busca.getInfo());
-        Assert.assertEquals(15, busca.getProximo().getInfo());
+        Assert.assertEquals(20, info);
+    }
+
+    @Test
+    public void buscarMeioTest(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+
+        NoLista<Integer> busca = lista.buscar(15);
+        int info = busca.getInfo();
+
+        Assert.assertEquals(15, info);
+    }
+
+    @Test
+    public void buscarInexistenteTest(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+
+        NoLista<Integer> busca = lista.buscar(50);
+
+        Assert.assertNull(busca);
     }
 
     @Test
     public void retirarPrimeiroTest() {
-        ListaEncadeada lista = new ListaEncadeada();
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
         lista.inserir(20);
-        lista.inserir(25);
-        lista.inserir(30);
 
-        lista.retirar(30);
+        lista.retirar(20);
 
-        NoLista removido = lista.buscar(30);
-        NoLista primeiro = lista.getPrimeiro();
+        NoLista<Integer> removido = lista.buscar(20);
+        int primeiro = lista.getPrimeiro().getInfo();
 
         Assert.assertNull(removido);
-        Assert.assertEquals(25, primeiro.getInfo());
+        Assert.assertEquals(15, primeiro);
+        Assert.assertEquals("15,10,5", lista.toString());
     }
 
     @Test
     public void retirarMeioTest() {
-        ListaEncadeada lista = new ListaEncadeada();
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         lista.inserir(5);
         lista.inserir(10);
         lista.inserir(15);
         lista.inserir(20);
-        lista.inserir(25);
-        lista.inserir(30);
 
-        lista.retirar(20);
+        lista.retirar(15);
 
-        NoLista removido = lista.buscar(20);
-        NoLista anterior = lista.buscar(25);
+        NoLista<Integer> removido = lista.buscar(15);
 
         Assert.assertNull(removido);
-        Assert.assertEquals(15, anterior.getProximo().getInfo());
+        Assert.assertEquals("20,10,5", lista.toString());
+    }
+
+    @Test
+    public void obterNoPrimeiroZeroTest() {
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+
+        NoLista<Integer> no = lista.obterNo(0);
+        int info = no.getInfo();
+
+        Assert.assertNotNull(no);
+        Assert.assertEquals(20, info);
+    }
+
+    @Test
+    public void obterNoUltimoTest() {
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+
+        NoLista<Integer> no = lista.obterNo(3);
+        int info = no.getInfo();
+
+        Assert.assertNotNull(no);
+        Assert.assertEquals(5, info);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void obterNoInvalidoTest() {
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+
+        NoLista<Integer> no = lista.obterNo(10);
+    }
+
+    @Test
+    public void obterComprimentoVazioTest() {
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        int comprimento = lista.obterComprimento();
+
+        Assert.assertEquals(0, comprimento);
+    }
+
+    @Test
+    public void obterComprimentoNaoVazioTest() {
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+
+        int comprimento = lista.obterComprimento();
+
+        Assert.assertEquals(4, comprimento);
     }
 }
 
