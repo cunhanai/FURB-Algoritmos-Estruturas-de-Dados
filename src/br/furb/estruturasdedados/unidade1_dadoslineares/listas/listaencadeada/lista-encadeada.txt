@@ -9,3 +9,25 @@ Cada nó da lista contém
 
 - A lista possui uma referência para o primeiro nó
 - A referência do últímo nó é null
+
+VARIAÇÕES
+
+- LISTAS CIRCULARES
+    O último nó da lista tem como "seu próximo" o primeiro nó da lista, formando um ciclo
+
+    - Maior legibilidade em algoritmos que percorrem infinitamente uma estrutura de dados
+    - Necessário escrever novos algoritmo para impedir execução infinita
+
+        Algoritmo: exibirCircular()
+        NoLista p ← primeiro;
+        se (p ≠ null) então
+            repita
+                escrever(p.info);
+                p ← p.proximo;
+            enquanto (p ≠ primeiro);
+        fim-se;
+
+- LISTAS COM ACESSO AS DUAS EXTREMIDADES
+    – Permite estabelecer outra ordem de inclusão de elementos, tanto pelo primeiro, quanto pelo último
+
+- LISTAS DUPLAMENTE ENCADEADAS

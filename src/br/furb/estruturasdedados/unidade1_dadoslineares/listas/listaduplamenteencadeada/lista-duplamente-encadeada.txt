@@ -1,0 +1,7 @@
+LISTA DUPLAMENTE ENCADEADA
+
+• Cada nó possui uma referência para o próximo nó e para o nó anterior
+
+• Necessário:
+    – Incluir novo objeto NoListaDupla
+    – Encadear o novo nó no início da lista existente
