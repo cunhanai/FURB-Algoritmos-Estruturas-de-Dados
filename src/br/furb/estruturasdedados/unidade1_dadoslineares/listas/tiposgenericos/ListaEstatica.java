@@ -1,6 +1,6 @@
 package br.furb.estruturasdedados.unidade1_dadoslineares.listas.tiposgenericos;
 
-public class ListaEstatica<Type> {
+public class ListaEstatica<T> {
     private Object[] info;
     private int tamanho;
 
@@ -23,7 +23,22 @@ public class ListaEstatica<Type> {
         info = novoInfo;
     }
 
-    public void inserir(Type valor) {
+    public void inserir(int posicao, T valor) throws IndexOutOfBoundsException {
+        if (posicao < 0 || posicao > tamanho)
+            throw new IndexOutOfBoundsException();
+
+        if (info.length == tamanho)
+            redimensionar();
+
+        for (int i = tamanho; i > posicao; i--) {
+            info[i] = info[i-1];
+        }
+
+        info[posicao] = valor;
+        tamanho++;
+    }
+
+    public void inserir(T valor) {
         if (info.length == tamanho)
             redimensionar();
 
@@ -35,7 +50,7 @@ public class ListaEstatica<Type> {
         System.out.println(this);
     }
 
-    public int buscar(Type valor) {
+    public int buscar(T valor) {
         for (int i = 0; i < tamanho; i++) {
             if (info[i].equals(valor))
                 return i;
@@ -44,7 +59,7 @@ public class ListaEstatica<Type> {
         return -1;
     }
 
-    public void retirar(Type valor) {
+    public void retirar(T valor) {
         int index = buscar(valor);
 
         if (index > -1) {
@@ -64,11 +79,11 @@ public class ListaEstatica<Type> {
         criarLista();
     }
 
-    public Type obterElemento(int posicao) throws IndexOutOfBoundsException {
+    public T obterElemento(int posicao) throws IndexOutOfBoundsException {
         if (posicao > tamanho)
             throw new IndexOutOfBoundsException("A posição dada é maior que o número de elementos da lista");
 
-        return (Type) info[posicao];
+        return (T) info[posicao];
     }
 
     public boolean estaVazia() {

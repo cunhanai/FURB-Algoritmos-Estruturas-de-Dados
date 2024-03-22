@@ -33,4 +33,123 @@ public class ListaDuplaTest {
         Assert.assertEquals(15, (int)segundoUltimo.getInfo());
         Assert.assertEquals(20, (int)primeiroUltimo.getInfo());
     }
+
+    @Test
+    public void testSublista() {
+        ListaDupla<Integer> lista1 = new ListaDupla<>();
+        lista1.inserir(70);
+        lista1.inserir(60);
+        lista1.inserir(50);
+        lista1.inserir(40);
+        lista1.inserir(30);
+        lista1.inserir(20);
+        lista1.inserir(10);
+
+        ListaDupla<Integer> lista2;
+        lista2 = lista1.criarSubLista(2,5);
+
+        Assert.assertEquals("30,40,50,60", lista2.toString());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testSublistaNegativoInicial() {
+        ListaDupla<Integer> lista1 = new ListaDupla<>();
+        lista1.inserir(70);
+        lista1.inserir(60);
+        lista1.inserir(50);
+        lista1.inserir(40);
+        lista1.inserir(30);
+        lista1.inserir(20);
+        lista1.inserir(10);
+
+        ListaDupla<Integer> lista2;
+        lista2 = lista1.criarSubLista(-1,5);
+
+        Assert.assertEquals("30,40,50,60", lista2.toString());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testSublistaNegativoFinal() {
+        ListaDupla<Integer> lista1 = new ListaDupla<>();
+        lista1.inserir(70);
+        lista1.inserir(60);
+        lista1.inserir(50);
+        lista1.inserir(40);
+        lista1.inserir(30);
+        lista1.inserir(20);
+        lista1.inserir(10);
+
+        ListaDupla<Integer> lista2;
+        lista2 = lista1.criarSubLista(2,-1);
+
+        Assert.assertEquals("30,40,50,60", lista2.toString());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testSublistaAcimaFinal() {
+        ListaDupla<Integer> lista1 = new ListaDupla<>();
+        lista1.inserir(70);
+        lista1.inserir(60);
+        lista1.inserir(50);
+        lista1.inserir(40);
+        lista1.inserir(30);
+        lista1.inserir(20);
+        lista1.inserir(10);
+
+        ListaDupla<Integer> lista2;
+        lista2 = lista1.criarSubLista(2,7);
+
+        Assert.assertEquals("30,40,50,60", lista2.toString());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testSublistaAcimaInicial() {
+        ListaDupla<Integer> lista1 = new ListaDupla<>();
+        lista1.inserir(70);
+        lista1.inserir(60);
+        lista1.inserir(50);
+        lista1.inserir(40);
+        lista1.inserir(30);
+        lista1.inserir(20);
+        lista1.inserir(10);
+
+        ListaDupla<Integer> lista2;
+        lista2 = lista1.criarSubLista(7,8);
+
+        Assert.assertEquals("30,40,50,60", lista2.toString());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testSublistaRangeInvalido() {
+        ListaDupla<Integer> lista1 = new ListaDupla<>();
+        lista1.inserir(70);
+        lista1.inserir(60);
+        lista1.inserir(50);
+        lista1.inserir(40);
+        lista1.inserir(30);
+        lista1.inserir(20);
+        lista1.inserir(10);
+
+        ListaDupla<Integer> lista2;
+        lista2 = lista1.criarSubLista(5,2);
+
+        Assert.assertEquals("30,40,50,60", lista2.toString());
+    }
+
+    @Test
+    public void testSublistaRangeDoisAcima() {
+        ListaDupla<Integer> lista1 = new ListaDupla<>();
+        lista1.inserir(70);
+        lista1.inserir(60);
+        lista1.inserir(50);
+        lista1.inserir(40);
+        lista1.inserir(30);
+        lista1.inserir(20);
+        lista1.inserir(10);
+
+        ListaDupla<Integer> lista2;
+        lista2 = lista1.criarSubLista(0,2);
+
+        Assert.assertEquals("10,20,30", lista2.toString());
+    }
 }

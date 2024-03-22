@@ -23,6 +23,8 @@ public class ListaEstatica {
         info = novoInfo;
     }
 
+
+
     public void inserir(int valor) {
         if (info.length == tamanho)
             redimensionar();
@@ -45,17 +47,13 @@ public class ListaEstatica {
     }
 
     public void retirar(int valor) {
-        int index = buscar(valor);
+        int posicao = buscar(valor);
 
-        if (index > -1) {
-            int[] novoInfo = new int[info.length];
-
-            for (int i = 0; i < tamanho; i++) {
-                if (i != index)
-                    novoInfo[i < index ? i : i - 1] = info[i];
+        if (posicao > -1) {
+            for (int i=posicao+1; i<tamanho; i++) {
+                info[i-1] = info[i];
             }
 
-            info = novoInfo;
             tamanho--;
         }
     }

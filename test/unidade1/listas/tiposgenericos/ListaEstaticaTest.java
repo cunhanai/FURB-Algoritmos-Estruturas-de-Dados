@@ -169,4 +169,19 @@ public class ListaEstaticaTest {
 
         Assert.assertEquals("25,20,15,10,5", lista.toString());
     }
+
+    @Test
+    public void testInserirPosicao() {
+        ListaEstatica<Integer> lista = new ListaEstatica<>();
+
+        lista.inserir(10);
+        lista.inserir(20);
+        lista.inserir(30);
+        lista.inserir(40);
+        lista.inserir(50);
+
+        lista.inserir(5, 99);
+
+        Assert.assertEquals("10,20,30,40,50,99", lista.toString());
+    }
 }

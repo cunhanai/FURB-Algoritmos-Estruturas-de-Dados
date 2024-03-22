@@ -2,19 +2,19 @@ package br.furb.estruturasdedados.unidade1_dadoslineares.listas.listaduplamentee
 
 import br.furb.estruturasdedados.unidade1_dadoslineares.listas.listaencadeada.NoLista;
 
-public class ListaDupla<Type> {
-    private NoListaDupla<Type> primeiro;
+public class ListaDupla<T> {
+    private NoListaDupla<T> primeiro;
 
     public ListaDupla() {
         primeiro = null;
     }
 
-    public NoListaDupla<Type> getPrimeiro() {
+    public NoListaDupla<T> getPrimeiro() {
         return primeiro;
     }
 
-    public void inserir(Type valor) {
-        NoListaDupla<Type> novo = new NoListaDupla<>();
+    public void inserir(T valor) {
+        NoListaDupla<T> novo = new NoListaDupla<>();
 
         novo.setInfo(valor);
         novo.setProximo(primeiro);
@@ -26,8 +26,8 @@ public class ListaDupla<Type> {
         primeiro = novo;
     }
 
-    public NoListaDupla<Type> buscar(Type valor) {
-        NoListaDupla<Type> atual = primeiro;
+    public NoListaDupla<T> buscar(T valor) {
+        NoListaDupla<T> atual = primeiro;
 
         while (atual != null && !atual.getInfo().equals(valor)) {
             atual = atual.getProximo();
@@ -36,8 +36,8 @@ public class ListaDupla<Type> {
         return null;
     }
 
-    public void retirar(Type valor) {
-        NoListaDupla<Type> atual = buscar(valor);
+    public void retirar(T valor) {
+        NoListaDupla<T> atual = buscar(valor);
 
         /*
         if (primeiro.getInfo().equals(valor)) {
@@ -58,7 +58,7 @@ public class ListaDupla<Type> {
         }
          */
 
-        NoListaDupla<Type> anterior = atual.getAnterior();
+        NoListaDupla<T> anterior = atual.getAnterior();
 
         //if (anterior != null && atual.getProximo() != null) {
             anterior.setProximo(atual.getProximo());
@@ -85,7 +85,7 @@ public class ListaDupla<Type> {
     public String toString() {
         StringBuilder string = new StringBuilder();
 
-        NoListaDupla<Type> atual = primeiro;
+        NoListaDupla<T> atual = primeiro;
         int count = 0;
 
         while (atual != null) {
@@ -97,5 +97,28 @@ public class ListaDupla<Type> {
         }
 
         return string.toString();
+    }
+
+    public ListaDupla<T> criarSubLista(int inicio, int fim) throws IndexOutOfBoundsException {
+        if (inicio < 0 || fim < 0 || fim - inicio < 0)
+            throw new IndexOutOfBoundsException();
+
+        ListaDupla<T> subLista = new ListaDupla<>();
+        NoListaDupla<T> p = primeiro;
+
+        for (int i = 1; i <= fim; i++) {
+            p = p.getProximo();
+
+            if (p == null)
+                throw new IndexOutOfBoundsException();
+        }
+
+        while (p != null && fim >= inicio) {
+            subLista.inserir(p.getInfo());
+            p = p.getAnterior();
+            fim--;
+        }
+
+        return  subLista;
     }
 }
