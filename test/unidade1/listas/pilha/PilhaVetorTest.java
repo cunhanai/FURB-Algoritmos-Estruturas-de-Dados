@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class PilhaTest {
+public class PilhaVetorTest {
 
     @Test
     public void estaVaziaPilhaVaziaTest1() {
