@@ -1,0 +1,17 @@
+PILHA
+
+- Novos elementos são adicionados sempre numa extremidade da estrutura de dados, o topo
+- Não é possível percorrer uma pilha
+- É possível acessar o elemento que estiver no topo da pilha e somente ele pode ser removido
+- LIFO - Last in first out
+
+EXEMPLOS DE USO
+
+- Na análise e resolução de expressões aritméticas
+    [2 x (10 - 4)] / 3
+
+- Processadores possuem arquitetura baseada em pilha
+
+- Algoritmos de manipulação de outras estruturas de dados
+    - Árvores binárias
+    - Grafos
