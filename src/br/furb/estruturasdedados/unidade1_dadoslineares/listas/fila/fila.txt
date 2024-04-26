@@ -1,0 +1,11 @@
+FILA
+
+- Novos elementos são adicionados numa única extremidade, o "final da fila"
+- Elementos sempre são retirados da extremidade oposta da inclusão, o "início da fila"
+- FIFO (first in firt out)
+
+- Mapear situações do mundo real, como fila de banco
+
+- Ferramentas de programação
+    Fila de documentos a serem impressos
+    Fila de teclas pressionadas
