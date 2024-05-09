@@ -1,0 +1,16 @@
+ÁRVORES BINÁRIAS
+
+- São árvores em que qualquer nó tem no máximo 2 filhos
+- Recursivamente, uma árvore binária é:
+    - Uma árvore vazia ou
+    - Um nó raiz com duas sub-árvores
+        - Sub-árvore da direita (SAD)
+        - Sub-árvore da esquerda (SAE)
+
+EXEMPLO
+
+Expressões aritméticas
+- Nós folhas representam operandos
+- Nós internos representam operadores
+
+- Árvores binárias de busca são especialmente uteis para realizar buscas O(log N)

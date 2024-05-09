@@ -1,0 +1,9 @@
+ÁRVORES N-ÁRIAS
+
+- Número variável de filhos
+- Pode ter mais do que duas sub-árvores associadas
+
+ORDEM
+- SA1 - primeira sub-árvore
+- SA2 - segunda sub-árvore
+- SA3 - terceira sub-árvore

@@ -1,0 +1,43 @@
+ÁRVORE
+
+- Consiste em nós conectados por arestas (ou arcos)
+- Nós "irmãos" conectados um no outro não formam uma árvore
+
+NÓ RAIZ
+- Está na parte superior da árvore
+- Existe apenas um
+
+NÓ PAI
+- Imediatamente acima de outro nó
+- Apenas o nó raiz não possui um nó pai
+
+NÓ FILHO
+- Imediatamente abaixo de outro nó
+
+FOLHA
+- É o nó que não tem filhos
+- Também chamado de "nó externo"
+
+NÓ INTERNO
+- É o nó que tem filho(s)
+
+CAMINHO
+- Trajeto de um nó até chegar a outro nó
+- Existe apenas um caminho entre o nó raiz e outro nó
+
+NÍVEL DE UM NÓ
+- Indica a distância de um nó até a raiz
+
+ALTURA DE ÁRVORE
+- Comprovante (extensão) do caminho mais longo da raiz até suas folhas
+- Corresponde também ao último nível da árvore
+- A altura de uma árvore com um único nó raiz é zero
+- A altura de uma árvore vazia é -1
+
+VISITAR
+- Um nó é visitado quando um algoritmo atinge tal nó
+
+PERCORRER
+- Percorrer uma árvore consiste em visitar todos os nós da árvore
+
+
