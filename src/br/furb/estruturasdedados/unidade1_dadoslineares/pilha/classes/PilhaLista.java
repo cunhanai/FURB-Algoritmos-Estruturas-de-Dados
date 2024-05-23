@@ -1,8 +1,8 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.classes;
+package br.furb.estruturasdedados.unidade1_dadoslineares.pilha.classes;
 
 import br.furb.estruturasdedados.unidade1_dadoslineares.listas.listaencadeada.ListaEncadeada;
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.exceptions.PilhaVaziaException;
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.interfaces.Pilha;
+import br.furb.estruturasdedados.unidade1_dadoslineares.pilha.exceptions.PilhaVaziaException;
+import br.furb.estruturasdedados.unidade1_dadoslineares.pilha.interfaces.Pilha;
 
 public class PilhaLista<T> implements Pilha<T> {
 

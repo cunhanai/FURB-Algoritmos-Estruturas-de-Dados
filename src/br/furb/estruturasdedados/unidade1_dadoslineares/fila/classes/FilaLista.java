@@ -1,6 +1,6 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.classes;
+package br.furb.estruturasdedados.unidade1_dadoslineares.fila.classes;
 
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.interfaces.Fila;
+import br.furb.estruturasdedados.unidade1_dadoslineares.fila.interfaces.Fila;
 
 public class FilaLista<T> implements Fila<T> {
 

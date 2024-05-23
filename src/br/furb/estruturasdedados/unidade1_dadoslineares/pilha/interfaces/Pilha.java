@@ -1,4 +1,4 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.interfaces;
+package br.furb.estruturasdedados.unidade1_dadoslineares.pilha.interfaces;
 
 public interface Pilha<T> {
 

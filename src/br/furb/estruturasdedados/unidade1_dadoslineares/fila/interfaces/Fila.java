@@ -1,4 +1,4 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.interfaces;
+package br.furb.estruturasdedados.unidade1_dadoslineares.fila.interfaces;
 
 public interface Fila<T> {
 

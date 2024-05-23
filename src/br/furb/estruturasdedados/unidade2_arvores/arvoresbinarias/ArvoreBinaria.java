@@ -1,4 +1,4 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.arvores.arvoresbinarias;
+package br.furb.estruturasdedados.unidade2_arvores.arvoresbinarias;
 
 public class ArvoreBinaria<T> {
     private NoArvoreBinaria<T> raiz;

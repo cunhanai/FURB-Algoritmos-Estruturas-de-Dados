@@ -1,9 +1,9 @@
 package unidade1.listas.pilha;
 
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.classes.PilhaVetor;
+import br.furb.estruturasdedados.unidade1_dadoslineares.pilha.classes.PilhaVetor;
 
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.exceptions.PilhaCheiaException;
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.exceptions.PilhaVaziaException;
+import br.furb.estruturasdedados.unidade1_dadoslineares.pilha.exceptions.PilhaCheiaException;
+import br.furb.estruturasdedados.unidade1_dadoslineares.pilha.exceptions.PilhaVaziaException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

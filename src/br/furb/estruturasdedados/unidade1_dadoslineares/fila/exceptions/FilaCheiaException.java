@@ -1,4 +1,4 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.exceptions;
+package br.furb.estruturasdedados.unidade1_dadoslineares.fila.exceptions;
 
 public class FilaCheiaException extends RuntimeException {
 

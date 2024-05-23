@@ -1,8 +1,8 @@
 package unidade1.listas.fila;
 
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.classes.FilaVetor;
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.exceptions.FilaCheiaException;
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.exceptions.FilaVaziaException;
+import br.furb.estruturasdedados.unidade1_dadoslineares.fila.classes.FilaVetor;
+import br.furb.estruturasdedados.unidade1_dadoslineares.fila.exceptions.FilaCheiaException;
+import br.furb.estruturasdedados.unidade1_dadoslineares.fila.exceptions.FilaVaziaException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

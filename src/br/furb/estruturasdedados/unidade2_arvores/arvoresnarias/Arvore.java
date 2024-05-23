@@ -1,4 +1,4 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.arvores.arvoresnarias;
+package br.furb.estruturasdedados.unidade2_arvores.arvoresnarias;
 
 public class Arvore<T> {
 

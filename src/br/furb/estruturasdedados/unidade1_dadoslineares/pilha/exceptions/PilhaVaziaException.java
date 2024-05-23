@@ -1,4 +1,4 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.pilha.exceptions;
+package br.furb.estruturasdedados.unidade1_dadoslineares.pilha.exceptions;
 
 public class PilhaVaziaException extends RuntimeException {
 

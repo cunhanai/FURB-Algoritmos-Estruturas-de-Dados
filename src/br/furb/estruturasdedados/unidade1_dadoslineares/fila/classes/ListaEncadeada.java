@@ -1,4 +1,4 @@
-package br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.classes;
+package br.furb.estruturasdedados.unidade1_dadoslineares.fila.classes;
 
 import br.furb.estruturasdedados.unidade1_dadoslineares.listas.listaencadeada.NoLista;
 import jdk.jshell.spi.ExecutionControl;

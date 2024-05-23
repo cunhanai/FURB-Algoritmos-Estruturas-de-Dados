@@ -1,6 +1,6 @@
 package unidade1.listas.fila;
 
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.fila.classes.FilaLista;
+import br.furb.estruturasdedados.unidade1_dadoslineares.fila.classes.FilaLista;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

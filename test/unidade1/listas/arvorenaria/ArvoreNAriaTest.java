@@ -1,7 +1,7 @@
 package unidade1.listas.arvorenaria;
 
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.arvores.arvoresnarias.Arvore;
-import br.furb.estruturasdedados.unidade1_dadoslineares.listas.arvores.arvoresnarias.NoArvore;
+import br.furb.estruturasdedados.unidade2_arvores.arvoresnarias.Arvore;
+import br.furb.estruturasdedados.unidade2_arvores.arvoresnarias.NoArvore;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
