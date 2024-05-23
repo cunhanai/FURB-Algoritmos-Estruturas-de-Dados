@@ -105,4 +105,21 @@ public class FilaVetor<T> implements Fila<T> {
     public int getLimite() {
         return limite;
     }
+
+    public void encolher() {
+        Object[] nova = new Object[limite];
+
+        int indice = 0;
+        for (int i = 0; i < tamanho; i++) {
+            int position = (inicio + i) % limite;
+
+            if (info[position] != null) {
+                nova[indice] = info[position];
+                indice++;
+            }
+        }
+
+        info = nova;
+        inicio = 0;
+    }
 }

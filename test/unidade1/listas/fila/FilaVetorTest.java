@@ -139,4 +139,48 @@ public class FilaVetorTest {
         assertEquals("40,50", str2);
         assertEquals(8, limite);
     }
+
+    @Test
+    public void encolherCircularTest() {
+        FilaVetor<Integer> fila = new FilaVetor<>(5);
+
+        fila.inserir(10);
+        fila.inserir(20);
+        fila.inserir(30);
+        fila.inserir(40);
+        fila.inserir(50);
+
+        fila.retirar();
+        fila.retirar();
+        fila.retirar();
+
+        fila.inserir(60);
+        fila.inserir(10);
+
+        fila.encolher();
+
+        String valor = fila.toString();
+
+        assertEquals("40,50,60,10", valor);
+    }
+
+    @Test
+    public void encolherTest() {
+        FilaVetor<Integer> fila = new FilaVetor<>(5);
+
+        fila.inserir(10);
+        fila.inserir(20);
+        fila.inserir(30);
+        fila.inserir(40);
+        fila.inserir(50);
+
+        fila.retirar();
+        fila.retirar();
+
+        fila.encolher();
+
+        String valor = fila.toString();
+
+        assertEquals("30,40,50", valor);
+    }
 }
